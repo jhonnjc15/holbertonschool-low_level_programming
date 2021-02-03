@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 /**
  * main- Short description, single line
  * @void: Description of parameter x
@@ -7,8 +8,9 @@
 (* section header: Section description)*
  * Return: 0
  */
+
 int main(void)
 	{
-	puts("\"Programming is like building a multilingual puzzle");
+	printf("with proper grammar, but the outcome is a piece of art,\n");
 	return (0);
 }
