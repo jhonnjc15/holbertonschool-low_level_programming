@@ -31,7 +31,7 @@ void print_to_98(int n)
 			{
 		if (num1 / 100 != 0)
 			_putchar(num1 / 100 + '0');
-		if ((num1 / 10) % 10 != 0)
+		if ((num1 / 10) != 0)
 			_putchar((num1 / 10) % 10 + '0');
 		_putchar(num1 % 10 + '0');
 		_putchar(',');
