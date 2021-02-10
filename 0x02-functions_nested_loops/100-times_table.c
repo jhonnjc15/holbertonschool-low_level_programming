@@ -9,10 +9,10 @@
  */
 void print_times_table(int n)
 	{
-	if (n < 15 && n > 0)
-		{
-		int tabla, sec1;
+	int tabla, sec1;
 
+	if (n < 15 && n >= 0)
+		{
 		for (tabla = 0 ; tabla <= n ; tabla++)
 			{
 			for (sec1 = 0 ; sec1 <= n ; sec1++)
