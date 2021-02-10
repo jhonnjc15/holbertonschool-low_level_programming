@@ -9,23 +9,23 @@
 (* section header: Section description)*
  * Return: 0
  */
-
 int main(void)
-	{
-	int n, n_0, n_1, suma;
+{
+	int n;
+	unsigned long num1, num2, suma;
 
-	n_0 = 1;
-	n_1 = 2;
-	printf("1, ");
-	printf("2, ");
-	for (n = 1 ; n <= 50 ; n++)
+	num1 = 1;
+	num2 = 2;
+	printf("%lu, ", num1);
+	printf("%lu, ", num2);
+	for (n = 1; n < 50; n++)
 		{
-		suma = n_0 + n_1;
-		printf("%d, ", suma);
-		n_0 = n_1;
-		n_1 = suma;
+		suma = num1 + num2;
+		printf("%lu, ", suma);
+		num1 = num2;
+		num2 = suma;
 	}
-	printf("%d\n", suma);
+	suma = num1 + num2;
+	printf("%lu\n", suma);
 	return (0);
 }
-
