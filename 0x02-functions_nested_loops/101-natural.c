@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "holberton.h"
 
 /**
  * main - Short description, single line
@@ -9,15 +10,18 @@
  * Return: 0
  */
 
-void main(void)
+int main(void)
 	{
 	int n, suma;
 
 	suma = 0;
 	for (n = 1 ; n < 1024 ; n++)
+		{
 		if (n % 3 == 0 || n % 5 == 0)
 			{
 			suma = suma + n;
 		}
+	}
 	printf("%d\n", suma);
+	return (0);
 }
