@@ -19,11 +19,11 @@ void print_to_98(int n)
 			{
 			_putchar('-');
 			num2 = num1;
-			if ((-num2 / 100) != 0)
-				_putchar(-num2 / 100 + '0');
+			if ((-1 * (num2 / 100)) != 0)
+				_putchar('0' + (-1 * (num2 / 100)));
 			if ((-1 * ((num2 / 10) % 10)) != 0)
-				_putchar((-1 * ((num2 / 10) % 10)) + '0');
-			_putchar((-1 * (num2 % 10)) + '0');
+				_putchar('0' + (-1 * ((num2 / 10) % 10)));
+			_putchar('0' + (-1 * (num2 % 10)));
 			_putchar(',');
 			_putchar(' ');
 		}
