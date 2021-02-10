@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
 
 /**
  * main - Short description, single line
@@ -18,7 +17,7 @@ int main(void)
 	num2 = 2;
 	printf("%lu, ", num1);
 	printf("%lu, ", num2);
-	for (n = 1; n < 50; n++)
+	for (n = 1; n < 48 ; n++)
 		{
 		suma = num1 + num2;
 		printf("%lu, ", suma);
