@@ -21,9 +21,9 @@ void print_to_98(int n)
 			num2 = num1;
 			if ((-num2 / 100) != 0)
 				_putchar(-num2 / 100 + '0');
-			if (((-num2 / 10) % 10) != 0)
-				_putchar(((-num2 / 10) % 10) + '0');
-			_putchar((-num2 % 10) + '0');
+			if ((-1 * ((num2 / 10) % 10)) != 0)
+				_putchar((-1 * ((num2 / 10) % 10)) + '0');
+			_putchar((-1 * (num2 % 10)) + '0');
 			_putchar(',');
 			_putchar(' ');
 		}
