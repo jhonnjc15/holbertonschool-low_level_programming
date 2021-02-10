@@ -24,6 +24,6 @@ int main(void)
 		if (suma % 2 == 0)
 			suma_par = suma_par + suma;
 	}
-	printf("%lu\n", suma_par);
+	printf("%lu\n", suma_par + 2);
 	return (0);
 }
