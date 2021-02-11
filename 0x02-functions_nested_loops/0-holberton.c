@@ -9,18 +9,15 @@
  * Return: 0
  */
 
-int main(void)
-{
+void main(void)
+	{
+	int n, suma;
 
-	_putchar('H');
-	_putchar('o');
-	_putchar('l');
-	_putchar('b');
-	_putchar('e');
-	_putchar('r');
-	_putchar('t');
-	_putchar('o');
-	_putchar('n');
-	_putchar('\n');
-	return (0);
+	suma = 0;
+	for (n = 1 ; n< 1024 ; n ++)
+		if (n % 3 == 0 || n % 5 == 0)
+			{
+			suma = suma + n;
+		}
+	printf(suma);
 }
