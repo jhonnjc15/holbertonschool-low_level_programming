@@ -25,5 +25,4 @@ void print_triangle(int size);
 
 void print_number(int n);
 
-int PrimeOrNot(long int n1);
 #endif
