@@ -10,11 +10,11 @@
 */
 
 
-int PrimeOrNot(unsigned long int n1);
+int PrimeOrNot(long long int n1);
 
-int PrimeOrNot(unsigned long int n1)
+int PrimeOrNot(long long int n1)
 {
-	unsigned long int i;
+	long long int i;
 
 	i = 2;
 	while (i <= n1 / 2)
@@ -39,19 +39,19 @@ int PrimeOrNot(unsigned long int n1)
 
 int main(void)
 {
-	long long int numero, div_number, maximo;
-	
-	div_number = 2;
+	long long int numero, i, maximo;
+
 	numero = 612852475143;
-	while (div_number <= numero)
+	for (i = 2 ; i <= numero ; i++)
 	{
-		if (numero % div_number == 0 && PrimeOrNot(div_number))
+		if (numero % i == 0)
 		{
-			numero = numero / div_number;
-			maximo = div_number;
+			if (PrimeOrNot(i))
+			{
+				numero = numero / i;
+				maximo = i;
+			}
 		}
-		else
-			div_number++;
 	}
 	printf("%lli\n", maximo);
 	return (0);
