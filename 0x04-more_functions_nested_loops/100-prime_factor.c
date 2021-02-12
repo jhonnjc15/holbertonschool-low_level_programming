@@ -10,11 +10,11 @@
 */
 
 
-int PrimeOrNot(long int n1);
+int PrimeOrNot(unsigned long int n1);
 
-int PrimeOrNot(long int n1)
+int PrimeOrNot(unsigned long int n1)
 {
-	int i;
+	unsigned long int i;
 
 	i = 2;
 	while (i <= n1 / 2)
@@ -39,8 +39,8 @@ int PrimeOrNot(long int n1)
 
 int main(void)
 	{
-	long int n;
-	long int numero1;
+	unsigned long int n;
+	unsigned long int numero1;
 
 	numero1 = 612852475143;
 	for (n = numero1 - 1 ; n >= 1 ; n--)
@@ -49,7 +49,7 @@ int main(void)
 		{
 			if (PrimeOrNot(n))
 			{
-				printf("%li", n);
+				printf("%lu", n);
 				break;
 			}
 		}
