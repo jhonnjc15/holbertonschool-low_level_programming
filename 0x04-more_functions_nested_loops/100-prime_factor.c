@@ -38,25 +38,22 @@ int PrimeOrNot(unsigned long int n1)
 
 
 int main(void)
-	{
-	unsigned long int n;
-	unsigned long int numero1;
+{
+	long long int n;
+	long long int div_number = 2;
+	long long int max_prime;
 
-	numero1 = 612852475143;
-	for (n = numero1 - 1 ; n >= 1 ; n--)
+	numero = 612852475143;
+	while (div_number <= n)
 	{
-		if (numero1 % n == 0)
+		if (n % div_number == 0 && PrimeOrNot(div_number))
 		{
-			if (PrimeOrNot(n))
-			{
-				printf("%lu", n);
-				break;
-			}
+			n = n / div_number;
+			max_prime = div_number;
 		}
+		else
+			div_number++;
 	}
-	printf("\n");
+	printf("%lli\n", max_prime);
 	return (0);
 }
-
-
-
