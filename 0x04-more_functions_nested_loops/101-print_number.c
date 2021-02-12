@@ -41,7 +41,7 @@ void print_number(int n)
 		_putchar ('-');
 		for (num3 = count + 1 ; num3 > 1 ; num3--)
 		{
-			_putchar (((-1 * n) / div) % 10 + '0');
+			_putchar (-1 * ((n / div) % 10) + '0');
 			div = div / 10;
 		}
 	}
