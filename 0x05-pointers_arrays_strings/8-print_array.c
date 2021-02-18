@@ -13,13 +13,11 @@ void print_array(int *a, int n)
 	{
 	int i;
 
-	for (i = 0 ; i < n ; i++)
+	for (i = 0 ; i < n - 1 ; i++)
 	{
-		printf("%d", a[i]);
-		if (i != (n - 1))
-		{
-			printf(", ");
-		}
+		printf("%d, ", a[i]);
 	}
+	/*finally we take the last value of i to print the last element */
+	printf("%d", a[i]);
 	printf("\n");
 }
