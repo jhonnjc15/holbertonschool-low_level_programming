@@ -43,6 +43,6 @@ char *_strcat(char *dest, char *src)
 		dest[index] = src[i];
 		i++;
 	}
-	dest[index] = src[index];
+	dest[index] = src[i];
 	return (dest);
 }
