@@ -30,22 +30,15 @@ int _strlen(char *s)
 
 void rev_string(char *s)
 	{
-	int index, i;
-	int length;
+	int length, i;
+	char tmp;
 
-	index = 0;
-	length = _strlen(s);
-
-	char new_string[length];
-
-	for (i = length - index - 1  ; i >= 0 ; i--)
+	length = _strlen(s) - 1;
+	for  (i = 0 ; i < length; i++)
 	{
-		new_string[index] = s[i];
-		index++;
-	}
-
-	for (i =  0  ; i < length ; i++)
-	{
-		s[i] = new_string[i];
+		tmp = s[i];
+		s[i] = s[length];
+		s[length] = tmp;
+		length--;
 	}
 }
