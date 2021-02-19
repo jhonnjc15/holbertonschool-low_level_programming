@@ -43,7 +43,7 @@ char *cap_string(char *s)
 	{
 		for (i2 = 0 ; i2 < length2 ; i2++)
 		{
-			if ((i1 == 0 || s[i1 - 1] == w_sp[i2]) && (s[i1] >= 97 && s[i1] <= 122))
+			if ((s[i1 - 1] == w_sp[i2]) && (s[i1] >= 97 && s[i1] <= 122))
 			{
 				s[i1] =  s[i1] - 32;
 			}
