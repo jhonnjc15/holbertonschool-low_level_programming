@@ -34,7 +34,7 @@ char *leet(char *s)
 	int length2;
 	int i1;
 	int i2;
-	char vocales[5] = "aeotl";
+	char vocales[5] = "AEOTL";
 	char  numeros[5] = "43071";
 
 	length1 = _strlen(s);
@@ -43,10 +43,9 @@ char *leet(char *s)
 	{
 		for (i2 = 0 ; i2 < length2 ; i2++)
 		{
-			if (s[i1] == vocales[i2] || s[i1] == vocales[i2] - 32)
+			if (s[i1] == vocales[i2] || s[i1] == vocales[i2] + 32)
 			{
 				s[i1] = numeros[i2];
-				break;
 			}
 		}
 	}
