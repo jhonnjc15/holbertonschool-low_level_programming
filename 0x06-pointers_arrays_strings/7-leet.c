@@ -34,8 +34,8 @@ char *leet(char *s)
 	int length2;
 	int i1;
 	int i2;
-	char vocales[5] = {'a', 'e', 'o', 't', 'l'};
-	char  numeros[5] = {'4', '3', '0', '7', '1'};
+	char vocales[5] = "aeotl";
+	char  numeros[5] = "43071";
 
 	length1 = _strlen(s);
 	length2 = _strlen(vocales);
