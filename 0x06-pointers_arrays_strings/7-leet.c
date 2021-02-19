@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
 * _strlen- print the alphabet
 * @s : A pointer to get the length of the string
@@ -47,6 +46,7 @@ char *leet(char *s)
 			if (s[i1] == vocales[i2] || s[i1] == vocales[i2] - 32)
 			{
 				s[i1] = numeros[i2];
+				break;
 			}
 		}
 	}
