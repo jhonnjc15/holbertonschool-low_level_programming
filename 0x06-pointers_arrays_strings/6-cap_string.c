@@ -38,7 +38,7 @@ char *cap_string(char *s)
 	char w_sp[] = {32, '\t', '\n', 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
 	length1 = _strlen(s);
-	length2 = _strlen(w_sp);
+	length2 = 13;
 	for (i1 = 0 ; i1 < length1 ; i1++)
 	{
 		for (i2 = 0 ; i2 < length2 ; i2++)
