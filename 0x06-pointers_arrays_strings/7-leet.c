@@ -13,8 +13,8 @@ char *leet(char *s)
 	int length;
 	int i1;
 	int i2;
-	char vocales[5] = {'A', 'E', 'O', 'T', 'L'};
-	char numeros[5] = {'4', '3', '0', '7', '1'};
+	char vocales[5] = "aeotl";
+	char numeros[5] = "43071";
 
 	length = 5;
 	i1 = 0;
@@ -22,7 +22,7 @@ char *leet(char *s)
 	{
 		for (i2 = 0 ; i2 < length ; i2++)
 		{
-			if (s[i1] == vocales[i2] || s[i1] == vocales[i2] + 32)
+			if (s[i1] == vocales[i2] || s[i1] == vocales[i2] - 32)
 			{
 				s[i1] = numeros[i2];
 			}
