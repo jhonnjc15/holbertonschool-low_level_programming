@@ -32,19 +32,21 @@ int _strlen(char *s)
 char *cap_string(char *s)
 	{
 	int length1;
-	int index;
+	int length2;
+	int i1;
+	int i2;
+	char w_sp[] = {32, '\t', '\n', 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
 	length1 = _strlen(s);
-	for (index = 0 ; index < length1 ; index++)
+	length2 = _strlen(w_sp);
+	for (i1 = 0 ; i1 < length1 ; i1++)
 	{
-		if ((s[index] == 44 || s[index] == 59 || s[index] == 46
-			|| s[index] == 33 || s[index] == 63 || s[index] == 34
-			|| s[index] == 40 || s[index] == 41 || s[index] == 123
-			|| s[index] == 125 || s[index] == '\t' || s[index] == '\n'
-			|| s[index] == ' ') && (index != length1 - 1)
-			&& (s[index + 1] >= 97 && s[index + 1] <= 122))
+		for (i2 = 0 ; i2 < length2 ; i2++)
 		{
-			s[index + 1] =  s[index + 1] - 32;
+			if ((s[i1] == w_sp[i2] && (s[i1 + 1] >= 97 && s[i1 + 1] <= 122)))
+			{
+				s[i1 + 1] =  s[i1 + 1] - 32;
+			}
 		}
 	}
 	return (s);
