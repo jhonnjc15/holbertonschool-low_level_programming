@@ -47,7 +47,6 @@ char *leet(char *s)
 			if (s[i1] == vocales[i2] || s[i1] == vocales[i2] - 32)
 			{
 				s[i1] = numeros[i2];
-				break;
 			}
 		}
 	}
