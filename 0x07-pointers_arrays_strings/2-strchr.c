@@ -25,9 +25,3 @@ char *_strchr(char *s, char c)
 		return (&s[i]);
 	return ('\0');
 }
-
-/*
-if (c == '\0' && s[i] == '\0')
-	p = s + i;
-	return (p);
-*/
