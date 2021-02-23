@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
 *_strspn - fill the first n bytes of the memory area with a constant b
 *@s: A char pointer
