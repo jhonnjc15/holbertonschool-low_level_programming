@@ -14,6 +14,8 @@ char *_strstr(char *haystack, char *needle)
 	int length;
 	int contador1;
 
+	if (needle[0] == '\0')
+		return haystack;
 	contador1 = 0;
 	while (needle[contador1] != '\0')
 	{
