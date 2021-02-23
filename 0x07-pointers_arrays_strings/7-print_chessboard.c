@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
-* print_chessboard - fill the first n bytes of the memory area with a constant b
-*@a: A char pointer
+* print_chessboard - function that prints the chessboard
+*@a: A matrix with the values of the game
 *Return: the modify pointer dest
 *On error, -1 is returned, and errno is set appropriately.
 */
