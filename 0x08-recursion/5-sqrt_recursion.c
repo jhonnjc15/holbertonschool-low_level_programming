@@ -10,7 +10,7 @@
 
 int raiz(int n, int i)
 {
-	if (i >= 0)
+	if (i >= 1)
 	{
 		if (i * i == n)
 		{
@@ -38,7 +38,7 @@ int _sqrt_recursion(int n)
 	{
 		return (raiz(n, n - 1));
 	}
-	else if (n == 0 || n == 1)
+	else if (n == 1)
 	{
 		return (n);
 	}
