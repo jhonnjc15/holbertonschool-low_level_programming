@@ -16,10 +16,7 @@ int raiz(int n, int i)
 		{
 			return (i);
 		}
-		else
-		{
-			return (raiz(n, i - 1));
-		}
+		return (raiz(n, i - 1));
 	}
 	else
 		return (-1);
