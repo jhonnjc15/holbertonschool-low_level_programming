@@ -16,38 +16,6 @@ int longitud(char *s)
 }
 
 /**
-*str_concat - function to concatenate two strings
-*@s1:First string
-*@s2:Second string
-*Return: the new concatenate string
-*On error, -1 is returned, and errno is set appropriately.
-*/
-
-char *str_concat(char *s1, char *s2)
-{
-	char *conc_string;
-	int i;
-
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	conc_string = malloc(sizeof(char) * (longitud(s1) + longitud(s2)) + 2);
-	if (conc_string == NULL)
-		return (NULL);
-	for (i = 0; i < longitud(s1) ; i++)
-	{
-		conc_string[i] = s1[i];
-	}
-	conc_string[longitud(s1)] = '\n';
-	for (i = 0; i <= longitud(s2) ; i++)
-	{
-		conc_string[i + longitud(s1) + 1] = s2[i];
-	}
-	return (conc_string);
-}
-
-/**
 *argstostr - function to concatenate all the arguments
 *@ac:the argc argument
 *@av:the argv argument
@@ -59,6 +27,7 @@ char *argstostr(int ac, char **av)
 {
 	char *conc_string;
 	int i, length;
+	int j, counter;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -67,13 +36,20 @@ char *argstostr(int ac, char **av)
 	{
 		length = length + longitud(av[i]);
 	}
-	conc_string = malloc(sizeof(char) * length + ac - 1);
+	conc_string = malloc(sizeof(char) * (length + ac + 1) );
 	if (conc_string == NULL)
 		return (NULL);
+	counter = 0;
 	for (i = 0; i < ac ; i++)
 	{
-		conc_string = str_concat(av[i], av[i + 1]);
-		av[i + 1] = conc_string;
+		for (j = 0; j < longitud(av[i]) ; j++)
+		{
+			conc_string[counter] = av[i][j];
+			counter++;
+		}
+		conc_string[counter] = '\n';
+		counter++;
 	}
+	conc_string[counter] = '\0';
 	return (conc_string);
 }
