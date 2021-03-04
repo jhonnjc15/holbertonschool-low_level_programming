@@ -27,7 +27,10 @@ char *str_concat(char *s1, char *s2)
 {
 	char *conc_string;
 	int i;
-
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	conc_string = malloc(sizeof(char) * (longitud(s1) + longitud(s2)) + 1);
 	if (conc_string == NULL)
 		return (NULL);
