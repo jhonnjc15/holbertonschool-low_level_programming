@@ -36,7 +36,7 @@ char *argstostr(int ac, char **av)
 	{
 		length = length + longitud(av[i]);
 	}
-	conc_string = malloc(sizeof(char) * (length + ac + 1) );
+	conc_string = malloc(sizeof(char) * (length + ac + 1));
 	if (conc_string == NULL)
 		return (NULL);
 	counter = 0;
