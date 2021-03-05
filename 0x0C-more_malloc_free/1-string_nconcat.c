@@ -33,11 +33,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	conc_string = malloc(sizeof(char) * (longitud(s1) + longitud(s2)) + 1);
-	if (conc_string == NULL)
-		return (NULL);
 	if (n >= longitud(s2))
 		n = longitud(s2);
+	conc_string = malloc(sizeof(char) * (longitud(s1) + n) + 1);
+	if (conc_string == NULL)
+		return (NULL);
 	for (i = 0; i < longitud(s1) ; i++)
 	{
 		conc_string[i] = s1[i];
