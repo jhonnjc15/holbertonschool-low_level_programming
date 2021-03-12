@@ -18,23 +18,25 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(parameters, n);
 	if (separator != NULL)
 	{
-		for (i = 0 ; i < n - 1 ; i++)
+		for (i = 0 ; i < n ; i++)
 		{
 			valor = va_arg(parameters, int);
-			printf("%d%s", valor, separator);
+			if (i != n - 1)
+				printf("%d%s", valor, separator);
+			else
+				printf("%d\n", valor);
 		}
-		valor = va_arg(parameters, int);
-		printf("%d\n", valor);
 	}
 	else
 	{
-		for (i = 0 ; i < n - 1 ; i++)
+		for (i = 0 ; i < n ; i++)
 		{
 			valor = va_arg(parameters, int);
-			printf("%d", valor);
+			if (i != n - 1)
+				printf("%d", valor);
+			else
+				printf("%d\n", valor);
 		}
-		valor = va_arg(parameters, int);
-		printf("%d\n", valor);
 	}
 	va_end(parameters);
 }
