@@ -10,17 +10,18 @@
 
 int sum_them_all(const unsigned int n, ...)
 {
-	if (n == 0)
-		return (0);
 	unsigned int i;
-	int suma;
+	int suma, valor;
 	va_list parametros;
 
 	va_start(parametros, n);
+	if (n == 0)
+		return (0);
 	suma = 0;
 	for (i = 0 ; i < n ; i++)
 	{
-		suma = suma + va_arg(parametros, int);
+		valor = va_arg(parametros, int);
+		suma = suma + valor;
 	}
 	va_end(parametros);
 	return (suma);
