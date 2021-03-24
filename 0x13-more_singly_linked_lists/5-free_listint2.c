@@ -14,7 +14,7 @@ void free_listint2(listint_t **head)
 	listint_t *temporal1, *temporal2;
 
 	temporal2 = *head;
-	if (temporal2 == NULL)
+	if (head == NULL)
 		return;
 	while (temporal2 != NULL)
 	{
@@ -22,5 +22,4 @@ void free_listint2(listint_t **head)
 		free(temporal2);
 		temporal2 = temporal1;
 	}
-	free(temporal2);
 }
