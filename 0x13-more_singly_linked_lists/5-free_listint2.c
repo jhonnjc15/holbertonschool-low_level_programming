@@ -11,15 +11,14 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *temporal1, *temporal2;
+	listint_t *temporal1;
 
 	if (head == NULL || *head == NULL)
 		return;
-	temporal2 = *head;
-	while (temporal2)
+	while (*head)
 	{
-		temporal1 = temporal2->next;
-		free(temporal2);
-		temporal2 = temporal1;
+		temporal1 = (*head)->next;
+		free(*head);
+		(*head) = temporal1;
 	}
 }
