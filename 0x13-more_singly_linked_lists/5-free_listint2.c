@@ -13,10 +13,10 @@ void free_listint2(listint_t **head)
 {
 	listint_t *temporal1, *temporal2;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return;
 	temporal2 = *head;
-	while (temporal2 != NULL)
+	while (temporal2)
 	{
 		temporal1 = temporal2->next;
 		free(temporal2);
