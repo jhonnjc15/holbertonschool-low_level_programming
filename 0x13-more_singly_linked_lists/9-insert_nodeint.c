@@ -28,12 +28,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	temp2 = NULL;
 	while (temporal != NULL && contador != idx)
 	{
+		if (temporal == NULL)
+			return (NULL);
 		temp2 = temporal;
 		temporal = temporal->next;
 		contador++;
 	}
-	if (temporal == NULL)
-		return (NULL);
 	new_node->n = n;
 	new_node->next = temporal;
 	temp2->next = new_node;
