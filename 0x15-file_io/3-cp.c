@@ -13,8 +13,8 @@
 */
 int main(int argc, char **argv)
 {
-	ssize_t open_text, open_text2, write_text, read_text;
-	ssize_t _close, _close2;
+	int open_text, open_text2, write_text, read_text;
+	int _close, _close2;
 	char buf[1024];
 
 	if (argc != 3)
@@ -28,21 +28,29 @@ int main(int argc, char **argv)
 	open_text2 = open(argv[2], O_CREAT | O_WRONLY | O_APPEND | O_TRUNC, 0664);
 	if (open_text2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write %s\n", argv[2]), exit(99);
-	
-	 while ((read_text = read(open_text, buf, 1024)) > 0)
-	 {
-	 	write_text = write(open_text2, buf, read_text);
-	 	if (read_text != write_text)
-	 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-	 }
-	 if (read_text == -1)
-	 	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	
+
+	while ((read_text = read(open_text, buf, 1024)) > 0)
+	{
+		write_text = write(open_text2, buf, read_text);
+		if (read_text != write_text)
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+	}
+	if (read_text == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	_close = close(open_text);
 	if (_close == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", (int)open_text), exit(100);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", open_text);
+		exit(100);
+	}
 	_close2 = close(open_text2);
 	if (_close2 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", (int)open_text2), exit(100);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", open_text2);
+		exit(100);
+	}
 	return (0);
 }
