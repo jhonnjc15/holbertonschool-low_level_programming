@@ -40,9 +40,9 @@ int main(int argc, char **argv)
 	}
 	_close = close(open_text);
 	if (_close == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", (int)open_text), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", (int)open_text), exit(100);
 	_close2 = close(open_text2);
 	if (_close2 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", (int)open_text2), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", (int)open_text2), exit(100);
 	return (0);
 }
