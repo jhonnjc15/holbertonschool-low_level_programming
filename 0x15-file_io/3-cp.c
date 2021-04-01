@@ -43,13 +43,13 @@ int main(int argc, char **argv)
 	_close = close(open_text);
 	if (_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", open_text);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_text);
 		exit(100);
 	}
 	_close2 = close(open_text2);
 	if (_close2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close from file %d\n", open_text2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", open_text2);
 		exit(100);
 	}
 	return (0);
