@@ -10,16 +10,16 @@
 void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *tmp = head;
-	/*Condicion para cuando haya un solo nodo*/
-	if (tmp->next == NULL)
-		free(tmp);
 
-	while (tmp->next != NULL)
+	while (tmp != NULL)
 	{
+		if (tmp->next == NULL)
+		{
+			free(tmp);
+			return;
+		}
 		tmp = tmp->next;
 		free(tmp->prev);
 		head = tmp;
 	}
-	if (tmp != NULL)
-		free(tmp);
 }
