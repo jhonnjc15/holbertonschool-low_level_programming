@@ -20,10 +20,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 	/*add_dnodeint recibe como param la direc de la direc de memoria de la lista*/
 		if (idx == 0)
-		{
-			add_dnodeint(h, n);
+		{	add_dnodeint(h, n);
 			return (*h); /*Y retorna la direccion de memoria*/
 		}
+		else
+			return (NULL);
 	}
 	while (tmp != NULL && tmp->next != NULL)
 	{
@@ -45,8 +46,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		counter = counter + 1;
 	}
 	if (idx == counter + 1)
-	{
-		add_dnodeint_end(&tmp, n);
+	{	add_dnodeint_end(&tmp, n);
 		return (tmp);
 	}
 	return (NULL);
