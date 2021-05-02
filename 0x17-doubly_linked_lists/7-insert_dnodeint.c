@@ -15,15 +15,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int counter = 0;
 
 	if (tmp == NULL)
-	{
+		return (NULL);
 	/*add_dnodeint recibe como param la direc de la direc de memoria de la lista*/
-		if (idx == 0)
-		{	new_node = add_dnodeint(h, n);
-			return (new_node); /*Y retorna la direccion de memoria*/
-		}
-		else
-			return (NULL);
+	if (idx == 0)
+	{	new_node = add_dnodeint(h, n);
+		return (new_node); /*Y retorna la direccion de memoria*/
 	}
+
 	while (tmp != NULL && tmp->next != NULL)
 	{
 		if ((idx - 1) == counter)
