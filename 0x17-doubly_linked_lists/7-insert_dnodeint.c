@@ -19,8 +19,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	/*add_dnodeint recibe como param la direc de la direc de memoria de la lista*/
 	if (idx == 0)
 	{	new_node = add_dnodeint(h, n);
+		*h = new_node;
 		return (new_node); /*Y retorna la direccion de memoria*/
 	}
+
 
 	while (tmp != NULL && tmp->next != NULL)
 	{
