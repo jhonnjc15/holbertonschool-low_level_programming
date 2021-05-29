@@ -11,6 +11,7 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int size_hash_table;
 	unsigned long int i;
 	unsigned long int counter = 0, counter2 = 0;
+	hash_node_t *temporal;
 
 	if (ht == NULL)
 		return;
@@ -18,20 +19,25 @@ void hash_table_print(const hash_table_t *ht)
 	size_hash_table = ht->size;
 	for (i = 0; i < size_hash_table; i++)
 	{
-		if (ht->array[i] != NULL)
+		temporal = ht->array[i];
+		while (temporal != NULL)
 		{
 			counter = counter + 1;
+			temporal = temporal->next;
 		}
 	}
+
 	printf("{");
 	for (i = 0; i < size_hash_table; i++)
 	{
-		if (ht->array[i] != NULL)
+		temporal = ht->array[i];
+		while (temporal != NULL)
 		{
 			printf("\'%s\': \'%s\'", ht->array[i]->key, ht->array[i]->value);
 			if (counter2 + 1 != counter)
 				printf(", ");
 			counter2 = counter2 + 1;
+			temporal = temporal->next;
 		}
 	}
 	printf("}\n");
