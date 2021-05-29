@@ -33,7 +33,7 @@ void hash_table_print(const hash_table_t *ht)
 		temporal = ht->array[i];
 		while (temporal != NULL)
 		{
-			printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
+			printf("'%s': '%s'", temportal->key, temporal->value);
 			if (counter2 + 1 != counter)
 				printf(", ");
 			counter2 = counter2 + 1;
