@@ -10,17 +10,13 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int size_hash_table;
-	unsigned long int index;
-	hash_node_t *new_node;
-	hash_node_t *head;
+	unsigned long int size_hash_table, index;
+	hash_node_t *new_node, *head;
 
 	if (!ht || !strlen(key) || !ht->size)
 		return (0);
-
 	size_hash_table = ht->size;
 	index = key_index((unsigned char *)key, size_hash_table);
-
 	head = ht->array[index];
 	/*If there is a collision*/
 	while (head != NULL)
@@ -51,8 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(new_node);
 		return (0);
 	}
-	new_node->next = NULL;
-
+	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
 	return (1);
 }
