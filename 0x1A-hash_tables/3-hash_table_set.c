@@ -1,6 +1,4 @@
 #include "hash_tables.h"
-#include <stdlib.h>
-#include <string.h>
 
 /**
  * hash_table_set - function that adds an element to the hash table.
@@ -40,8 +38,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
-	new_node->next = head;
+	new_node->next = NULL;
 
-	head = new_node;
+	ht->array[index] = new_node;
 	return (1);
 }
